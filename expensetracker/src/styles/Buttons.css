@@ -31,3 +31,9 @@
     cursor: pointer;
     width: 360px;
 }
+
+.Buttons hr{
+    border:1px solid rgb(45, 44, 44);
+    width: 100%;
+    margin: 20px 0;
+}

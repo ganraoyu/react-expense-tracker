@@ -11,10 +11,15 @@ const Buttons = () => {
   };
 
   const handleAddClick = () => {
-    const newExpense = { id: expenses.length, amount: parseFloat(inputValue) };
-    setExpenses(prevExpenses => [...prevExpenses, newExpense]);
-    setTotalBalance(prevTotalBalance => prevTotalBalance + newExpense.amount);
-    setInputValue('');
+    const amount = parseFloat(inputValue);
+    if (!isNaN(amount) && amount !== 0) {
+      const newExpense = { id: expenses.length, amount };
+      setExpenses(prevExpenses => [...prevExpenses, newExpense]);
+      setTotalBalance(prevTotalBalance => prevTotalBalance + newExpense.amount);
+      setInputValue('');
+    } else {
+      alert('Please enter a valid amount');
+    }
   };
 
   return (
@@ -22,6 +27,8 @@ const Buttons = () => {
       {expenses.map(expense => (
         <div className="expense-item" key={expense.id}>${expense.amount.toFixed(2)}</div>
       ))}
+      <h2>ADD NEW TRANSACTION</h2>
+      <hr/>
       <input placeholder='Enter Amount' value={inputValue} onChange={handleInputChange} />
       <button className='Add-Button' onClick={handleAddClick}>ADD</button>  
     </div>
