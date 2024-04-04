@@ -1,0 +1,41 @@
+.IncomeExpenseSummary hr {
+    border:1px solid rgb(45, 44, 44);
+    width: 100%;
+    margin: 20px 0;
+}
+
+
+.BalanceDiv {
+    color: black;
+    border:1px;
+    width:200px;
+    height:120px;
+    font-weight:400;
+    font-size:1.2rem;
+    display:flex;
+    flex-direction:column;
+    align-items: center;
+    background-color: #e2e2e2;
+    box-shadow: 5 5 5 ;
+}
+
+.ExpenseDiv p {
+    font-size: 1.2rem;
+    font-weight: 400;
+    color: black;
+    margin: 5px 0;
+}
+
+.ExpenseDiv p:nth-child(2),
+.ExpenseDiv p:nth-child(4) {
+    font-size: 2rem;
+    font-weight: 400;
+    color: black;
+    margin: 0;
+}
+
+
+.ExpenseDiv{
+    display: flex;
+    justify-content: space-between;
+}
