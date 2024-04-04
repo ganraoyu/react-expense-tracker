@@ -1,8 +1,8 @@
-import React, { useState } from 'react'
+// TotalExpenseDisplay.jsx
+import React from 'react'
 import '../styles/TotalExpenseDisplay.css';
-const TotalExpenseDisplay = () => {
 
-  const [ totalBalance, setTotalBalance ] = useState("00.00")
+const TotalExpenseDisplay = ({ totalBalance }) => {
   return (
     <div className='TotalExpenseDisplay'>
       <div className='YourBalance'>YOUR BALANCE</div>
