@@ -1,0 +1,13 @@
+.Add-Button{
+    background-color: #001954;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+}
+
+.Add-Button:hover {
+    opacity: 0.8;
+}
