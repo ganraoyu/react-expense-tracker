@@ -1,14 +1,16 @@
-// TotalExpenseDisplay.jsx
-import React from 'react'
+import React, { useContext } from 'react';
+import ExpenseContext from './ExpenseContext';
 import '../styles/TotalExpenseDisplay.css';
 
-const TotalExpenseDisplay = ({ totalBalance }) => {
+const TotalExpenseDisplay = () => {
+  const { totalBalance } = useContext(ExpenseContext);
+
   return (
     <div className='TotalExpenseDisplay'>
       <div className='YourBalance'>YOUR BALANCE</div>
-      <div className='Balance'>${totalBalance}</div>
+      <div className='Balance'>${totalBalance.toFixed(2)}</div>
     </div>
   )
 }
 
-export default TotalExpenseDisplay
+export default TotalExpenseDisplay;

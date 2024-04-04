@@ -1,10 +1,14 @@
-import React from 'react'
-import ReactDOM from 'react-dom/client'
-import App from './App.jsx'
-import './index.css'
+import React from 'react';
+import ReactDOM from 'react-dom';
+import App from './App';
+import './index.css';
+import ExpenseProvider from './components/ExpenseProvider';
 
-ReactDOM.createRoot(document.getElementById('root')).render(
+ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <ExpenseProvider>
+      <App />
+    </ExpenseProvider>
   </React.StrictMode>,
-)
+  document.getElementById('root')
+);

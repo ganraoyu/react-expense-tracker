@@ -1,16 +1,19 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react';
+import ExpenseContext from './ExpenseContext';
 import '../styles/Buttons.css';
 
 const Buttons = () => {
+  const { totalBalance, setTotalBalance, expenses, setExpenses } = useContext(ExpenseContext);
   const [inputValue, setInputValue] = useState('');
-  const [expenses, setExpenses] = useState([]);
 
   const handleInputChange = (event) => {
     setInputValue(event.target.value);
   };
 
   const handleAddClick = () => {
-    setExpenses(prevExpenses => [...prevExpenses, { id: prevExpenses.length, amount: parseFloat(inputValue) }]);
+    const newExpense = { id: expenses.length, amount: parseFloat(inputValue) };
+    setExpenses(prevExpenses => [...prevExpenses, newExpense]);
+    setTotalBalance(prevTotalBalance => prevTotalBalance + newExpense.amount);
     setInputValue('');
   };
 
@@ -25,4 +28,4 @@ const Buttons = () => {
   )
 }
 
-export default Buttons
+export default Buttons;
