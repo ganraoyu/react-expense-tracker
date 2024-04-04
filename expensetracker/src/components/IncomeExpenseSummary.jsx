@@ -9,8 +9,9 @@ const IncomeExpenseSummary = () => {
           <p >INCOME</p>
           <p>$100.00</p>
         </div>
+        <div className='VerticalLine'></div>
         <div className='BalanceDiv'>
-          <p >EXPENSE</p>
+          <p>EXPENSE</p>
           <p>$50.00</p>
         </div>
      </div>
