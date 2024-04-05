@@ -16,16 +16,16 @@ const IncomeExpenseSummary = () => {
       <div className='ExpenseDiv'>
         <div className='BalanceDiv'>
           <p>INCOME</p>
-          <p>${totalExpenseAmount.toFixed(2)}</p>
+          <p>${totalExpenseAmount > 0 ? totalExpenseAmount.toFixed(2) : "0.00"}</p>
         </div>
         <div className='VerticalLine'></div>
         <div className='BalanceDiv'>
           <p>EXPENSE</p>
-          <p>${totalExpenseAmount < 0 ? totalExpenseAmount.toFixed(2) : "0.00"}</p>
+          <p>{totalExpenseAmount < 0 ? "-$" + Math.abs(totalExpenseAmount.toFixed(2)) : "0.00"}</p>
         </div>
      </div>
     </div>
   )
 }
 
-export default IncomeExpenseSummary;
+export default IncomeExpenseSummary;  
