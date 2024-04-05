@@ -1,13 +1,15 @@
 import React, { useState, useContext } from 'react';
 import '../styles/IncomeExpenseSummary.css';
 import ExpenseContext from './ExpenseContext';
-const IncomeExpenseSummary = () => {
 
+const IncomeExpenseSummary = () => {
   const [income, SetIncome] = useState("00.00");
   const [expense, SetExpense] = useState("00.00");
 
   const { totalBalance, setTotalBalance, expenses, setExpenses } = useContext(ExpenseContext);
+
   const totalExpenseAmount = expenses.reduce((total, expense) => total + expense.amount, 0);
+
   return (
     <div className='IncomeExpenseSummary'> 
       <hr/>
@@ -19,11 +21,11 @@ const IncomeExpenseSummary = () => {
         <div className='VerticalLine'></div>
         <div className='BalanceDiv'>
           <p>EXPENSE</p>
-          <p>${expense}</p> 
+          <p>${totalExpenseAmount < 0 ? totalExpenseAmount.toFixed(2) : "0.00"}</p>
         </div>
      </div>
     </div>
   )
 }
 
-export default IncomeExpenseSummary
+export default IncomeExpenseSummary;
