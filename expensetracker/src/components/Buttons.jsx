@@ -19,6 +19,7 @@ const Buttons = () => {
       setInputValue('');
     } else {
       alert('Please enter a valid amount');
+      setInputValue('');
     }
   };
 
