@@ -5,7 +5,7 @@ import '../styles/Buttons.css';
 const Buttons = () => {
   const { totalBalance, setTotalBalance, expenses, setExpenses } = useContext(ExpenseContext);
   const [inputValue, setInputValue] = useState('');
-
+  const totalExpenseAmount = expenses.reduce((total, expense) => total + expense.amount, 0);
   const handleInputChange = (event) => {
     setInputValue(event.target.value);
   };
@@ -26,7 +26,9 @@ const Buttons = () => {
   return (
     <div className='Buttons'>
       {expenses.map(expense => (
-        <div className="expense-item" key={expense.id}>${expense.amount.toFixed(2)}</div>
+        <div className="expense-item" key={expense.id}>
+        {expense.amount < 0 ? "-$" + Math.abs(expense.amount).toFixed(2) : `$${expense.amount.toFixed(2)}`}
+      </div>
       ))}
       <h2>ADD NEW TRANSACTION</h2>
       <hr/>
