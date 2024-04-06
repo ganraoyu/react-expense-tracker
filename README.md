@@ -8,7 +8,7 @@ This is a simple expense tracker application built with React. It allows users t
 
 ## Installation
 
-1. Clone this repository: `[git clone https://github.com/yourusername/expense-tracker.git](https://github.com/ganraoyu/react-expense-tracker.git)`
+1. Clone this repository: `(https://github.com/ganraoyu/react-expense-tracker.git)`
 2. Open the terminal in Visual Studio Code. You can do this by clicking on Terminal in the top menu, then New Terminal. To find the directory of your cloned React app, in the terminal, type `pwd` and press Enter. This will print the path of your current directory. Use this path to navigate to the project directory with the cd command. `cd your_directory`
 3. Install dependencies: `npm install`
 4. Start the application: `npm run dev`
