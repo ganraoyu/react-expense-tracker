@@ -23,11 +23,17 @@ const Buttons = () => {
     }
   };
 
+  const handleDeleteClick = (id) => {
+    const newExpenses = expenses.filter(expense => expense.id !== id);
+    setExpenses(newExpenses);
+  }
+
   return (
     <div className='Buttons'>
       {expenses.map(expense => (
         <div className="expense-item" key={expense.id}>
         {expense.amount < 0 ? "-$" + Math.abs(expense.amount).toFixed(2) : `$${expense.amount.toFixed(2)}`}
+        <button className='deleteButton' onClick={() => handleDeleteClick(expense.id)}>X</button>
       </div>
       ))}
       <h2>ADD NEW TRANSACTION</h2>
