@@ -30,10 +30,34 @@
     border: none;
     cursor: pointer;
     width: 360px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .Buttons hr{
     border:1px solid rgb(45, 44, 44);
     width: 100%;
     margin: 20px 0;
+}
+
+.deleteButton{
+    background-color: rgb(6, 6, 134);
+    color:white;
+    outline:none;
+    border:none;
+    border-radius: 5px;
+    width:40px;
+    height:30px;
+}
+
+.deleteButton:hover{
+    background-color: rgb(3, 3, 80);
+    color:white;
+    outline:none;
+    border:none;
+    border-radius: 5px;
+    width:40px;
+    height:30px;
+    cursor:pointer;
 }
